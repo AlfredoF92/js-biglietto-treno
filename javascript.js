@@ -11,28 +11,33 @@ Bonus:
 Applicare de controlli sull'input dell'utente*/
 
 
-let km = 15;
+let km = 15; 
 console.log("Km inseriti: " + km);
 
 let eta = 16;
 console.log("Anni inseriti: " + eta);
 
 let prezzoDelBiglietto = km * 0.21; 
-console.log("Prezzo del biglietto: " + prezzoDelBiglietto);
 
 let messageOutput;
 
 let sconto40 = prezzoDelBiglietto * 0.40;
 let prezzoBigliettoScontato40 = prezzoDelBiglietto - sconto40;
 
+console.log("***********************************************************************");
+
 if(eta < 18){
     //Applicare sconto del 20% per i minorenni
     let sconto20 = prezzoDelBiglietto * 0.20;
     prezzoDelBiglietto = prezzoDelBiglietto - sconto20;
+    console.log("Hai meno di 18 anni, è stato applicato uno sconto del 20% al tuo biglietto!");
 }else if (eta > 65){
     //Applicare sconto del 40% per gli over65
     let sconto40 = prezzoDelBiglietto * 0.40;
+    console.log("Fai parte della categoria over65! E' stato applicato uno sconto del 40% al tuo biglietto!");
     prezzoDelBiglietto = prezzoDelBiglietto - sconto40;
 }
 
-console.log("il Prezzo del biglietto è" + prezzoDelBiglietto);
+console.log(">>>>>> Il Prezzo del biglietto è " + prezzoDelBiglietto + "€");
+
+console.log("***********************************************************************");
