@@ -11,24 +11,25 @@ Bonus:
 Applicare de controlli sull'input dell'utente*/
 
 //fai un controllo se l'input è un intero da 1 a 100
-let km = 2;
+let km = parseInt(prompt("Inserisci il numero di chilometri da percorrere:"));
 
 if (!(typeof (km) === 'number' && km > 0)) {
     //Controllo per verificare se l'input KM è un numero corretto > 0
-    console.log("**********Input non valido************");
+   
+    alert("**********Input non valido - Ricarica la pagina ************");
 } else {
-    console.log("Km inseriti: " + typeof (km));
-
-
+   
     //Controllo per verificare se l'input ETA è un numero corretto > 0 < 120
-    let eta = 66;
+    let eta = parseInt(prompt("Inserisci la tua età:"));
 
+    
     if (!(typeof (eta) === 'number' && eta <= 120 && eta > 0)) {
 
-        console.log("**********Input non valido************");
+        alert("**********Input non valido - Ricarica la pagina ************");
 
     } else {
         
+        console.log("Km inseriti: " + eta);
         console.log("Anni inseriti: " + eta);
 
         let prezzoDelBiglietto = km * 0.21;
@@ -55,5 +56,5 @@ if (!(typeof (km) === 'number' && km > 0)) {
 
     }
 
-}  console.log("Errore nell'input. Ricarica la pagina!");
+} 
 
