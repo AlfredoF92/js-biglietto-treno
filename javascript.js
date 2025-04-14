@@ -10,33 +10,50 @@ Prima di scrivere il codice impostate il ragionamento nei commenti!
 Bonus:
 Applicare de controlli sull'input dell'utente*/
 
+//fai un controllo se l'input è un intero da 1 a 100
+let km = 2;
 
-let km = 66; 
-console.log("Km inseriti: " + km);
-
-let eta = 66;
-console.log("Anni inseriti: " + eta);
-
-let prezzoDelBiglietto = km * 0.21; 
-
-console.log("\n***********************************************************************");
-
-console.log(">>>>>> Il Prezzo del biglietto è " + prezzoDelBiglietto.toFixed(2) + "€");
-
-if(eta < 18){
-    //Applicare sconto del 20% per i minorenni
-    let sconto20 = prezzoDelBiglietto * 0.20;
-    prezzoDelBiglietto = prezzoDelBiglietto - sconto20;
-    console.log("Hai meno di 18 anni, è stato applicato uno sconto del 20% al tuo biglietto!");
-    console.log(">>>>>> Il prezzo del biglietto scontato è: " + prezzoDelBiglietto.toFixed(2) + "€");
-}else if (eta > 65){
-    //Applicare sconto del 40% per gli over65
-    let sconto40 = prezzoDelBiglietto * 0.40;
-    console.log("Fai parte della categoria Over 65! E' stato applicato uno sconto del 40% al tuo biglietto!");
-    prezzoDelBiglietto = prezzoDelBiglietto - sconto40;
-    console.log(">>>>>> Il prezzo del biglietto scontato per te è: " + prezzoDelBiglietto.toFixed(2) + "€");
-}
+if (!(typeof (km) === 'number' && km > 0)) {
+    //Controllo per verificare se l'input KM è un numero corretto > 0
+    console.log("**********Input non valido************");
+} else {
+    console.log("Km inseriti: " + typeof (km));
 
 
+    //Controllo per verificare se l'input ETA è un numero corretto > 0 < 120
+    let eta = 66;
 
-console.log("***********************************************************************");
+    if (!(typeof (eta) === 'number' && eta <= 120 && eta > 0)) {
+
+        console.log("**********Input non valido************");
+
+    } else {
+        
+        console.log("Anni inseriti: " + eta);
+
+        let prezzoDelBiglietto = km * 0.21;
+
+        console.log("\n***********************************************************************");
+
+        console.log(">>>>>> Il Prezzo del biglietto è " + prezzoDelBiglietto.toFixed(2) + "€");
+
+        if (eta < 18) {
+            //Applicare sconto del 20% per i minorenni
+            let sconto20 = prezzoDelBiglietto * 0.20;
+            prezzoDelBiglietto = prezzoDelBiglietto - sconto20;
+            console.log("Hai meno di 18 anni, è stato applicato uno sconto del 20% al tuo biglietto!");
+            console.log(">>>>>> Il prezzo del biglietto scontato è: " + prezzoDelBiglietto.toFixed(2) + "€");
+        } else if (eta > 65) {
+            //Applicare sconto del 40% per gli over65
+            let sconto40 = prezzoDelBiglietto * 0.40;
+            console.log("Fai parte della categoria Over 65! E' stato applicato uno sconto del 40% al tuo biglietto!");
+            prezzoDelBiglietto = prezzoDelBiglietto - sconto40;
+            console.log(">>>>>> Il prezzo del biglietto scontato per te è: " + prezzoDelBiglietto.toFixed(2) + "€");
+        }
+
+        console.log("***********************************************************************");
+
+    }
+
+}  console.log("Errore nell'input. Ricarica la pagina!");
+
